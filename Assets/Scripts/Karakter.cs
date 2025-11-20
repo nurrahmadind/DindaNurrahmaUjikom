@@ -5,6 +5,8 @@ public class Karakter : MonoBehaviour
    public Transform CubeTransform;
    public Vector2 PosisiKlik;
 
+   public GameObject spawnPeluru;
+
    void Start()
     {
     
@@ -39,10 +41,10 @@ public class Karakter : MonoBehaviour
         //cubetransform.position adalah posisi objek yang akan digeser
         //posisiklik adalah posisi yang dituju
 
-        // if (Input.GetKeyDown(KeyCode.Mouse0))
-        // {
-        //     SpawnSegitiga();
-        // }
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Instantiate(spawnPeluru, new Vector3(worldMousePosition.x, -4.5f, 0), Quaternion.identity);
+        }
         
     }
 
