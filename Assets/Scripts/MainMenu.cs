@@ -28,4 +28,7 @@ public class MainMenu : MonoBehaviour
             UnityEditor.EditorApplication.isPlaying = false;
         #endif
     }
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+    }
 }
