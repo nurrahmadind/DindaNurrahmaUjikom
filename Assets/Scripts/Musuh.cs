@@ -12,14 +12,14 @@ public class Musuh : MonoBehaviour
     void Update()
     {
         
-    } 
+    }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.collider.CompareTag("Peluru"))
         {
-            // Destroy(collision.gameObject);
-            // Destroy(gameObject);
-           SceneManager.LoadScene("GameOver");
+            Destroy(gameObject);
+            //Destroy(collision.gameObject);
         }
     }
+
 }

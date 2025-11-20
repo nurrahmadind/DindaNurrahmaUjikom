@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class MusuhSpawner : MonoBehaviour
 {
-    public GameObject musuhPrefab;
+    public GameObject musuhEnemy1;
+    public GameObject musuhEnemy2;
+    public GameObject musuhEnemy3;
 
     public bool sedangSpawn = true;
     public float spawnRate = 2f;
@@ -12,18 +14,27 @@ public class MusuhSpawner : MonoBehaviour
     
     void Start()
     {
-        StartCoroutine(MunculMusuh());
+        StartCoroutine(spawnEnemy1());
+        StartCoroutine(spawnEnemy2());
     }
     void Update()
     {
         
     }
 
-    IEnumerator MunculMusuh()
+    IEnumerator spawnEnemy1()
     {
         while (sedangSpawn==true)
         {
-            Instantiate(musuhPrefab, new Vector3(Random.Range(-5,5), 5,0), Quaternion.identity);
+            Instantiate(musuhEnemy1, new Vector3(Random.Range(-5,5), 5,0), Quaternion.identity);
+            
+            yield return new WaitForSeconds(spawnRate);}
+    }
+    IEnumerator spawnEnemy2()
+    {
+        while (sedangSpawn==true)
+        {
+            Instantiate(musuhEnemy2, new Vector3(Random.Range(-5,5), 5,0), Quaternion.identity);
             
             yield return new WaitForSeconds(spawnRate);}
     }
