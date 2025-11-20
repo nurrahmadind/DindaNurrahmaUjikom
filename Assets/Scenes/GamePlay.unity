@@ -900,7 +900,7 @@ GameObject:
   - component: {fileID: 1958357213}
   m_Layer: 0
   m_Name: Karakter
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1262,9 +1262,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd7636f906a8c514dba5c2688ab115cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musuhEnemy1: {fileID: 0}
-  musuhEnemy2: {fileID: 0}
-  musuhEnemy3: {fileID: 0}
+  musuhEnemy1: {fileID: 1985642410860595846, guid: 08734fc702bd3f6498f442d267ac715e, type: 3}
+  musuhEnemy2: {fileID: 724024403050367093, guid: a105167ee8325764ab24b01e1b696a54, type: 3}
+  musuhEnemy3: {fileID: 261954604550675381, guid: 37feab472a809c143b58f48dd66c9986, type: 3}
   sedangSpawn: 1
   spawnRate: 2
 --- !u!1660057539 &9223372036854775807

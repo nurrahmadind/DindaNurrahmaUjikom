@@ -20,6 +20,10 @@ public class Musuh : MonoBehaviour
             Destroy(gameObject);
             //Destroy(collision.gameObject);
         }
+        if (collision.collider.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 
 }
