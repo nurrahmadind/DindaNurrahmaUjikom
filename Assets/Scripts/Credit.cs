@@ -1,16 +1,13 @@
 using UnityEngine;
-
+using TMPro;
+using UnityEngine.SceneManagement;
 public class Credits : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+      public TMP_Text text;
+    
+     public void MainMenu()
     {
-        
+        SceneManager.LoadScene("MainMenu");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
