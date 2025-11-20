@@ -7,9 +7,9 @@ public class Score : MonoBehaviour
     public TMP_Text scoreText;
     // public AudioObject audioObject;
     public int score;
-        void Start()
+    void Start()
     {
-      UpdateScore();
+        UpdateScore();
     }
 
     public void UpdateScore()
@@ -19,6 +19,6 @@ public class Score : MonoBehaviour
 
     public void tambahScore()
     {
-       score++;
+        score++;
     }
 }

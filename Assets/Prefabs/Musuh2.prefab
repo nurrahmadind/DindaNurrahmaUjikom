@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5298429561862068404}
   m_Layer: 0
   m_Name: Musuh2
-  m_TagString: Untagged
+  m_TagString: Musuh
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

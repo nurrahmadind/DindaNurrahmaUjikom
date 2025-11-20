@@ -9,7 +9,7 @@ public class ArahPeluru : MonoBehaviour
     void Start()
     {
         Destroy(gameObject, DestroyPeluru);
-        // GameObject _gameObject = GameObject.Find("Score");
+        // GameObject _gameObject = GameObject.FindGameObjectWithTag("Score");
         // score = gameObject.GetComponent<Score>();
 
     }
@@ -21,4 +21,14 @@ public class ArahPeluru : MonoBehaviour
         // score.tambahScore();
         // score.UpdateScore();
     }
+    void OollisionEnter2D(Collision2D collision)
+    {
+        
+        if (collision.collider.CompareTag("Musuh"))
+        {
+            score.tambahScore();
+            score.UpdateScore();
+            Destroy(gameObject);
+
+        }}
 }
