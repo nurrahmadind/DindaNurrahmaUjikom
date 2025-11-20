@@ -483,6 +483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kecepatan: 5
   DestroyPeluru: 2
+  score: {fileID: 0}
 --- !u!4 &615054138
 Transform:
   m_ObjectHideFlags: 0
@@ -591,6 +592,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 706874688}
+  - component: {fileID: 706874689}
   m_Layer: 0
   m_Name: Score
   m_TagString: Untagged
@@ -613,6 +615,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &706874689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706874687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a466b483b1232941b9fb1995f7a9e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 1263028699}
+  score: 0
 --- !u!1 &963803354
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,7 +792,7 @@ GameObject:
   - component: {fileID: 1263028699}
   m_Layer: 5
   m_Name: Score
-  m_TagString: Untagged
+  m_TagString: Score
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

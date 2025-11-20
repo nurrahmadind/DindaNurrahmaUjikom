@@ -4,15 +4,21 @@ public class ArahPeluru : MonoBehaviour
 {
     public float kecepatan = 5f;
     public float DestroyPeluru = 2f;
+    public Score score;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Destroy(gameObject, DestroyPeluru);
+        // GameObject _gameObject = GameObject.Find("Score");
+        // score = gameObject.GetComponent<Score>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
         gameObject.transform.Translate(0, kecepatan*Time.deltaTime, 0); 
+        // score.tambahScore();
+        // score.UpdateScore();
     }
 }
