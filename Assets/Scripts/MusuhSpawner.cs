@@ -16,6 +16,7 @@ public class MusuhSpawner : MonoBehaviour
     {
         StartCoroutine(spawnEnemy1());
         StartCoroutine(spawnEnemy2());
+        StartCoroutine(spawnEnemy3());
     }
     void Update()
     {
@@ -35,6 +36,14 @@ public class MusuhSpawner : MonoBehaviour
         while (sedangSpawn==true)
         {
             Instantiate(musuhEnemy2, new Vector3(Random.Range(-5,5), 5,0), Quaternion.identity);
+            
+            yield return new WaitForSeconds(spawnRate);}
+    }
+    IEnumerator spawnEnemy3()
+    {
+        while (sedangSpawn==true)
+        {
+            Instantiate(musuhEnemy3, new Vector3(Random.Range(-5,5), 5,0), Quaternion.identity);
             
             yield return new WaitForSeconds(spawnRate);}
     }
