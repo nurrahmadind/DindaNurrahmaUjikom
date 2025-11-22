@@ -53,7 +53,7 @@ public class Timer : MonoBehaviour
         ProgressFill.fillAmount = waktu /MaximumWaktu;
         
         yield return new WaitForSeconds(1);
-        Debug.Log (WaktuBerjalan);  
+        // Debug.Log (WaktuBerjalan):   
          if (waktu == MaximumWaktu)
         
             {

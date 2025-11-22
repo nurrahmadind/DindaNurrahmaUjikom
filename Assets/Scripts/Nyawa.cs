@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class Nyawa : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -36,7 +37,13 @@ public class Nyawa : MonoBehaviour
     }
     public void KurangNyawa()
     {
-        nyawa --;
+        nyawa = MaximumNyawa --;
+
         ProgressFill.fillAmount = nyawa / 10f;
+        if (nyawa == 0)
+            {
+                SceneManager.LoadScene("GameOver");
+            
+            }
     }
 }

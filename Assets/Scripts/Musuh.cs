@@ -25,6 +25,7 @@ public class Musuh : MonoBehaviour
         if (collision.collider.CompareTag("Lantai"))
         {
             nyawa.KurangNyawa();
+            Debug.Log ("nyawa berkurang");
             Destroy(gameObject);
         }
     }
