@@ -6,14 +6,19 @@ public class AudioManager : MonoBehaviour
     // Musuh sampai bawah layar
     // Peluru tabrak musuh
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public AudioSource _SFXSpawnPeluru;
+    public AudioSource _SFXNabrakMusuh;
+
+
+    public void putarSpawnPeluru()
     {
-        
+        _SFXSpawnPeluru.Play();
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void putarNabrakMusuh()
     {
-        
+        _SFXNabrakMusuh.Play();
+
     }
 }

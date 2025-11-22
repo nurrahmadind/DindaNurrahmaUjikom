@@ -6,6 +6,7 @@ public class Karakter : MonoBehaviour
    public Vector2 PosisiKlik;
 
    public GameObject spawnPeluru;
+   public AudioManager audioObject;
 
    void Start()
     {
@@ -41,6 +42,7 @@ public class Karakter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Instantiate(spawnPeluru, new Vector3(worldMousePosition.x, -4.5f, 0), Quaternion.identity);
+            audioObject.putarSpawnPeluru();
         }
         
     }

@@ -27,8 +27,8 @@ public class ArahPeluru : MonoBehaviour
         if (collision.collider.CompareTag("Musuh"))
         {
             Debug.Log ("Nabrak Musuh");
-            valScore.TambahScore();
-            valScore.UpdateScore();
+            // valScore.TambahScore();
+            // valScore.UpdateScore();
             Destroy(gameObject);
 
         }
