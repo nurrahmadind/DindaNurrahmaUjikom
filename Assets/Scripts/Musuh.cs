@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Musuh : MonoBehaviour
 {
-    
+    public Nyawa nyawa;//karena berkomunikasi dengan nyawa jika musuh menyentuh bagian bawah nyawa berkurang -1
    void Start()
     {
         Destroy(gameObject, 3f);
+        GameObject _gameObject = GameObject.FindGameObjectWithTag("Nyawa");
+        nyawa = _gameObject.GetComponent<Nyawa>();
     }
     void Update()
     {
@@ -20,9 +22,10 @@ public class Musuh : MonoBehaviour
             Destroy(gameObject);
             //Destroy(collision.gameObject);
         }
-        if (collision.collider.CompareTag("Player"))
+        if (collision.collider.CompareTag("Lantai"))
         {
-            SceneManager.LoadScene("GameOver");
+            nyawa.KurangNyawa();
+            Destroy(gameObject);
         }
     }
 

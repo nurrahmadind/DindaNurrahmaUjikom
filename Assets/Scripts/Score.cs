@@ -1,24 +1,31 @@
 using TMPro;
 using UnityEngine;
 
-
 public class Score : MonoBehaviour
 {
-    public TMP_Text scoreText;
-    // public AudioObject audioObject;
-    public int score;
+    public TMP_Text TextScore;
+
+    public int ScoreValue;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         UpdateScore();
     }
 
-    public void UpdateScore()
+    // Update is called once per frame
+    void Update()
     {
-        scoreText.text = "Score: " + score.ToString();
+        
     }
 
-    public void tambahScore()
+    public void UpdateScore()
     {
-        score++;
+        TextScore.text = "Score : " + ScoreValue.ToString();
+    }
+
+    public void TambahScore()
+    {
+        ScoreValue++;
     }
 }

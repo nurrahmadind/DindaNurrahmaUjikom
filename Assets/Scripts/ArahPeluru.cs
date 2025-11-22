@@ -4,7 +4,7 @@ public class ArahPeluru : MonoBehaviour
 {
     public float kecepatan = 5f;
     public float DestroyPeluru = 2f;
-    public Score score;
+    public Score ScoreValue;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,14 +21,16 @@ public class ArahPeluru : MonoBehaviour
         // score.tambahScore();
         // score.UpdateScore();
     }
-    void OollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         
         if (collision.collider.CompareTag("Musuh"))
         {
-            score.tambahScore();
-            score.UpdateScore();
+            Debug.Log ("Nabrak Musuh");
+            ScoreValue.TambahScore();
+            ScoreValue.UpdateScore();
             Destroy(gameObject);
 
-        }}
+        }
+    }
 }

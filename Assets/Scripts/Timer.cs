@@ -1,5 +1,4 @@
 using System.Collections;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -9,10 +8,10 @@ public class Timer : MonoBehaviour
     public float waktu; //float ialah class untuk menampung angka desimal
     //waktu adalah variable yang menampung nilai dari waktu
     
-    public int MaximumWaktu=10;
+    public int MaximumWaktu;
     //int ialah class untuk menampung angka bulat
     //MaximumWaktu adalah variable yang menampung nilai dari waktu maksimal
-      public bool WaktuBerjalan;
+      public bool WaktuBerjalan=true;
     //bool berguna untuk menampung nilai true atau false
     //WaktuBerjalan adalah variable yang menampung nilai dari waktu berjalan
     //bool digunakan untuk menentukan apakah waktu berjalan atau tidak
@@ -24,7 +23,7 @@ public class Timer : MonoBehaviour
     // public KeyCode StopCoroutineKey;
     // //StopCoroutineKey adalah variable yang menampung nilai dari keycode untuk menghentikan coroutine
 
-    // public Coroutine HitungTimerCoroutine;
+    public Coroutine HitungTimerCoroutine;
     // //Coroutine ialah class untuk menampung coroutine
     // //coroutine berfungsi untuk menjalankan perintah secara berurutan
     // //HitungTimerCoroutine adalah variable yang menampung nilai dari coroutine
@@ -34,31 +33,33 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
-        StartCoroutine(HitungTimer());
-        waktu=10;        
+        StartCoroutine(HitungTimer());       
     }
 
    void Update()
     {
-        if (waktu <= 0)
-        
-            {
-                SceneManager.LoadScene("GameOver");
-            
-            }
+       
     }
     IEnumerator HitungTimer()
     {
-        while (WaktuBerjalan == true)// fungsi pada baris ini berfungsi untuk menampilkan timer
+        while (WaktuBerjalan == true && waktu < MaximumWaktu)
+        // fungsi pada baris ini berfungsi untuk menampilkan timer
         //waktu berjalan adalah boolean yang menentukan apakah timer berjalan atau tidak
         //waktu < MaximumWaktu adalah untuk menentukan apakah waktu sudah mencapai batas maksimal atau belum
         //waktu adalah variabel yang menentukan berapa detik yang sudah berjalan
         //MaximumWaktu adalah variabel yang menentukan berapa detik yang akan berjalan
         {
-        waktu = waktu -1; //waktu akan bertambah setiap detik
-        ProgressFill.fillAmount = waktu / 10;
+        waktu ++; //waktu akan bertambah setiap detik
+        ProgressFill.fillAmount = waktu /MaximumWaktu;
         
         yield return new WaitForSeconds(1);
+        Debug.Log (WaktuBerjalan);  
+         if (waktu == MaximumWaktu)
+        
+            {
+                SceneManager.LoadScene("GameOver");
+            
+            }
         }
     }
 }

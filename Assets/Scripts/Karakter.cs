@@ -26,15 +26,12 @@ public class Karakter : MonoBehaviour
         //untuk menentukan posisi maksimum stelah diubah menjadi posisi world
 
         worldMousePosition.x = Mathf.Clamp(worldMousePosition.x, minimum.x, maximum.x);
+        //mathf clamp utk menentukan opsisi mouse agar tidak melewati batas
         //untuk menentukan batas x dari posisi mouse
         worldMousePosition.y = -4.5f;
 
         CubeTransform.position = worldMousePosition;
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-           //ini harusnya nanti spawn object
-        }
         // CubeTransform.position = Vector2.MoveTowards (CubeTransform.position, PosisiKlik,0.1f);
         //fungsi ini berguna untuk menggeser objek ke posisi yang telah ditentukan
         //0.1f adalah kecepatan gerak
