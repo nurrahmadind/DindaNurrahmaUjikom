@@ -4,7 +4,7 @@ public class ArahPeluru : MonoBehaviour
 {
     public float kecepatan = 5f;
     public float DestroyPeluru = 2f;
-    public Score ScoreValue;
+    public Score valScore;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,8 +27,8 @@ public class ArahPeluru : MonoBehaviour
         if (collision.collider.CompareTag("Musuh"))
         {
             Debug.Log ("Nabrak Musuh");
-            ScoreValue.TambahScore();
-            ScoreValue.UpdateScore();
+            valScore.TambahScore();
+            valScore.UpdateScore();
             Destroy(gameObject);
 
         }
