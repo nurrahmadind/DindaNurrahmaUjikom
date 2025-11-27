@@ -9,8 +9,8 @@ public class ArahPeluru : MonoBehaviour
     void Start()
     {
         Destroy(gameObject, DestroyPeluru);
-        // GameObject _gameObject = GameObject.FindGameObjectWithTag("Score");
-        // score = gameObject.GetComponent<Score>();
+        GameObject _gameObject = GameObject.FindGameObjectWithTag("Score");
+        valScore = _gameObject.GetComponent<Score>();
 
     }
 
@@ -27,8 +27,8 @@ public class ArahPeluru : MonoBehaviour
         if (collision.collider.CompareTag("Musuh"))
         {
             Debug.Log ("Nabrak Musuh");
-            // valScore.TambahScore();
-            // valScore.UpdateScore();
+            valScore.TambahScore();
+            valScore.UpdateScore();
             Destroy(gameObject);
 
         }

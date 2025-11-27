@@ -11,7 +11,8 @@ public class Timer : MonoBehaviour
     public int MaximumWaktu;
     //int ialah class untuk menampung angka bulat
     //MaximumWaktu adalah variable yang menampung nilai dari waktu maksimal
-      public bool WaktuBerjalan=true;
+    public bool WaktuBerjalan=true;
+    public Score Score;
     //bool berguna untuk menampung nilai true atau false
     //WaktuBerjalan adalah variable yang menampung nilai dari waktu berjalan
     //bool digunakan untuk menentukan apakah waktu berjalan atau tidak
@@ -51,9 +52,14 @@ public class Timer : MonoBehaviour
         {
         waktu ++; //waktu akan bertambah setiap detik
         ProgressFill.fillAmount = waktu /MaximumWaktu;
-        
         yield return new WaitForSeconds(1);
-        // Debug.Log (WaktuBerjalan):   
+        // Debug.Log (WaktuBerjalan)
+        }
+        if (waktu <=0)
+        {
+            WaktuBerjalan = false;
+            PlayerPrefs.SetInt("Score", Score.ScoreValue);
+            PlayerPrefs.Save();   
          if (waktu == MaximumWaktu)
         
             {
