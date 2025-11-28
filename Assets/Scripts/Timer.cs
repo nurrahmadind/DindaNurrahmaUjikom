@@ -4,67 +4,43 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public float waktu; //float ialah class untuk menampung angka desimal
-    //waktu adalah variable yang menampung nilai dari waktu
-    
-    public int MaximumWaktu;
-    //int ialah class untuk menampung angka bulat
-    //MaximumWaktu adalah variable yang menampung nilai dari waktu maksimal
-    public bool WaktuBerjalan=true;
-    public Score Score;
-    //bool berguna untuk menampung nilai true atau false
-    //WaktuBerjalan adalah variable yang menampung nilai dari waktu berjalan
-    //bool digunakan untuk menentukan apakah waktu berjalan atau tidak
+    public float Waktu;
+    public Score skor;
 
-    // public KeyCode StartCoroutineKey;
-    // //Keycode ialah class untuk menampung keycode
-    // //StartCoroutineKey adalah variable yang menampung nilai dari keycode untuk memulai coroutine
+    public float MaximumWaktu;
 
-    // public KeyCode StopCoroutineKey;
-    // //StopCoroutineKey adalah variable yang menampung nilai dari keycode untuk menghentikan coroutine
+    public bool WaktuBerjalan = true;
 
     public Coroutine HitungTimerCoroutine;
-    // //Coroutine ialah class untuk menampung coroutine
-    // //coroutine berfungsi untuk menjalankan perintah secara berurutan
-    // //HitungTimerCoroutine adalah variable yang menampung nilai dari coroutine
 
     public Image ProgressFill;
-
-    // Update is called once per frame
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StartCoroutine(HitungTimer());       
+        StartCoroutine(HitungTimer());
     }
 
-   void Update()
+    // Update is called once per frame
+    void Update()
     {
-       
+
     }
+
     IEnumerator HitungTimer()
     {
-        while (WaktuBerjalan == true && waktu < MaximumWaktu)
-        // fungsi pada baris ini berfungsi untuk menampilkan timer
-        //waktu berjalan adalah boolean yang menentukan apakah timer berjalan atau tidak
-        //waktu < MaximumWaktu adalah untuk menentukan apakah waktu sudah mencapai batas maksimal atau belum
-        //waktu adalah variabel yang menentukan berapa detik yang sudah berjalan
-        //MaximumWaktu adalah variabel yang menentukan berapa detik yang akan berjalan
+        while (WaktuBerjalan == true && Waktu < MaximumWaktu)
         {
-        waktu ++; //waktu akan bertambah setiap detik
-        ProgressFill.fillAmount = waktu /MaximumWaktu;
-        yield return new WaitForSeconds(1);
-        // Debug.Log (WaktuBerjalan)
-        }
-        if (waktu <=0)
-        {
-            WaktuBerjalan = false;
-            PlayerPrefs.SetInt("Score", Score.ScoreValue);
-            PlayerPrefs.Save();   
-         if (waktu == MaximumWaktu)
-        
+            // Waktu = Waktu + 1;
+            // TextTimer.text = Waktu.ToString();
+            Waktu++;
+            ProgressFill.fillAmount = Waktu / MaximumWaktu;
+            yield return new WaitForSeconds(1);
+            if (Waktu == MaximumWaktu)
             {
+                WaktuBerjalan = false;
+                PlayerPrefs.SetInt("SkorAkhir", skor.ScoreValue);
+                PlayerPrefs.Save();
                 SceneManager.LoadScene("GameOver");
-            
             }
         }
     }

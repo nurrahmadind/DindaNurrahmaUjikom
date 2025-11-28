@@ -1401,7 +1401,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2a0d5b87f1ffb4fb2fc56bbab01087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waktu: 0
+  Waktu: 0
+  skor: {fileID: 706874689}
   MaximumWaktu: 10
   WaktuBerjalan: 1
   ProgressFill: {fileID: 1224422810}
